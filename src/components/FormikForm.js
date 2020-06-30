@@ -60,16 +60,16 @@ export default () => {
       fetch("/", {
         method: "POST",
         // headers: { "Content-Type": 'multipart/form-data; boundary=random' },
-        body: JSON.stringify(data)
+        body: data
       })
-      .then(() => setStatus("Form Submission Successful!!"))
-      .catch(error => test("Form Submission Failed!"));
+      .then(data => setStatus("Form Submission Successful!!")            
+      .catch(error => test("Form Submission Failed!"))
             
   };
  return (
    <div className="App">
       
-      <form onSubmit={handleSubmit(onSubmit)} >
+      <form onSubmit={handleSubmit(onSubmit)} action="/thank-you/">
              <div>          
               <label>
                  <input type="text" name="name"  placeholder={'Your name'} ref={register({
