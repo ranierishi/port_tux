@@ -1,0 +1,77 @@
+div.App{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  margin: auto;
+  width: 50%;    
+  padding: 10px;
+  margin-top: auto;
+  text-align: center;
+  
+}
+
+
+.App p{
+  padding:10px;
+  display:inline-flex
+}
+.App p h1 {
+  padding:10px;
+  font-size: 1vw;
+  
+}
+.App input{
+  background-color:#1e242c;
+  border-radius: 0px;
+  height: 30px;
+  width: 30vw ;
+  padding: 5px;
+  border-style: none;
+  color:#FFF;
+  
+}
+.App textarea{
+  background-color:#1e242c;
+  border-radius: 0px;
+  height: 80px;
+  width: 30vw;
+  padding:5px;
+  border-style: none;
+  color:#FFF;
+}
+
+.App .Button{
+  
+  cursor: pointer;
+  margin-bottom: 30px;
+
+}
+
+.App .Button:hover {
+  background-color: #00a1a7
+  
+}
+
+.App .Button:active {
+  background-color: #00a1a7;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.App p {
+  color: #bf1650;
+  font-weight: 100;
+}
+
+.App p::before {
+  margin-top: -4px;
+  display: inline;
+  content: "⚠ ";
+}
+
+.App div {
+  padding-bottom: 3px;
+}
+.App h3 {
+  font-weight: 100;
+  color: #FFF
+}

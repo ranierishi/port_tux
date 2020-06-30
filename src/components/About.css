@@ -1,0 +1,130 @@
+.test{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.texto{
+  width: 30vw;
+  padding: 20px;
+}
+
+div .skill{
+  width: 60%;
+  height: 6% ;
+  background-color: #eee;
+  display: flex;
+  color:#666;
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+div .skill_per{
+  width: 70%;
+  height: 100%;
+  background-color: #00a1a7;
+  
+}
+
+
+div .skill_per4{
+  width: 90%;
+  height: 100%;
+  background-color: #00a1a7;
+  
+}
+
+div .skill_per5{
+  width: 65%;
+  height: 100%;
+  background-color: #00a1a7;
+  
+}
+
+div .skill_per6{
+  width: 35%;
+  height: 100%;
+  background-color: #00a1a7;
+  
+}
+
+div .skill_per7{
+  width: 45%;
+  height: 100%;
+  background-color: #00a1a7;
+  
+}
+
+div .skill_per8{
+  width: 75%;
+  height: 100%;
+  background-color: #00a1a7;
+  
+}
+
+div .skill_per9{
+  width: 83%;
+  height: 100%;
+  background-color: #00a1a7;
+  
+}
+
+div .skill_per10{
+  width: 83%;
+  height: 100%;
+  background-color: #00a1a7;
+  
+}
+
+div .skill_per11{
+  width: 40%;
+  height: 100%;
+  background-color: #00a1a7;
+  
+}
+
+div .skill_name{
+  width: 70px;
+  height: 100%;
+  background-color: #04c2c9;
+  color:#fff;
+  
+}
+
+div .skill_name .MuiTypography-body1{
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 4px;
+ 
+  
+}
+.qualityText{
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+.percent{  
+  margin-right: 3px;
+  font-size: 0.9rem;
+  
+  
+}
+
+@media (max-width: 600px) {
+  .texto{
+    width: 80vw;
+  }
+
+  
+  div .skill{
+    width: 85vw;
+    height: 28px ;
+    background-color: #eee;
+    display: flex;
+    color:#666;  
+    align-items: center;   
+  }
+}

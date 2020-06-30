@@ -1,0 +1,60 @@
+
+.containerx{  
+  display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    overflow: visible;
+}
+
+
+
+@media (min-width: 600px) {
+  .test2{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(0, 0, 0, 0.75);
+}
+
+.closeButton {
+  top:0;
+  right:0;
+  position: absolute;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.text {
+  padding: 20px;
+  color: #656565;
+  line-height: 25px;
+}
+.subtitle {
+  
+  color: #656565;
+  line-height: 25px;
+}
+
+@media (max-width: 600px) {
+  .containerx{
+    flex-direction: column-reverse;
+    
+  }
+
+  .test2{
+    position: inherit;
+    top:unset;
+  }
+
+}
