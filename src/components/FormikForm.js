@@ -51,32 +51,30 @@ export default () => {
     }
   }
   */
- const encode = (data) => {
-  const formData = new FormData();
-  Object.keys(data).forEach((k)=>{
-    formData.append(k,data[k])
-  });
-  return formData
-}
+ 
+
  const [status,setStatus] = useState('');
- const { register, handleSubmit, errors, formState:{isSubmitting}  } = useForm();
-  const onSubmit = data => {    
-      //console.log(data)
-      //alert(JSON.stringify(data));
-      
-      fetch("/", {
-        method: "POST",
-        // headers: { "Content-Type": 'multipart/form-data; boundary=random' },
-        body: encode(data)
+ const { register, handleSubmit, errors  } = useForm();
+ const onSubmit =  (data)  => {
+     fetch('/', {
+      method: 'POST', 
+      body: data,
       })
       .then(() => setStatus("Form Submission Successful!!"))
       .catch(error => test("Form Submission Failed!"));
             
   };
+
  return (
    <div className="App">
       
-      <form onSubmit={handleSubmit(onSubmit)} action="/thank-you/">
+      <form onSubmit={handleSubmit(onSubmit)}
+        name="Contact Form"
+        method="POST"
+        netlify-honeypot="bot-field"
+        data-netlify="true"
+        action="/thanks">
+      <input type="hidden" name="bot-field" />
              <div>          
               <label>
                  <input type="text" name="name"  placeholder={'Your name'} ref={register({
@@ -108,7 +106,7 @@ export default () => {
             </div>
             
             <div>
-            <input className="Button" disabled={isSubmitting} type="submit" />
+            <input className="Button" type="submit" />
             </div>
           </form>
           <h3>{status}</h3>
