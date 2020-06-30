@@ -51,6 +51,13 @@ export default () => {
     }
   }
   */
+ const encode = (data) => {
+  const formData = new FormData();
+  Object.keys(data).forEach((k)=>{
+    formData.append(k,data[k])
+  });
+  return formData
+}
  const [status,setStatus] = useState('');
  const { register, handleSubmit, errors, formState:{isSubmitting}  } = useForm();
   const onSubmit = data => {    
@@ -60,10 +67,10 @@ export default () => {
       fetch("/", {
         method: "POST",
         // headers: { "Content-Type": 'multipart/form-data; boundary=random' },
-        body: data
+        body: encode(data)
       })
-      .then(data => setStatus("Form Submission Successful!!")            
-      .catch(error => test("Form Submission Failed!"))
+      .then(() => setStatus("Form Submission Successful!!"))
+      .catch(error => test("Form Submission Failed!"));
             
   };
  return (
