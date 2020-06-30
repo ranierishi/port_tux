@@ -51,15 +51,23 @@ export default () => {
     }
   }
   */
- 
+ const encode = (data) => {
+  const formData = new FormData();
+  Object.keys(data).forEach((k)=>{
+    formData.append(k,data[k])
+  });
+  return formData
+}
 
  const [status,setStatus] = useState('');
  const { register, handleSubmit, errors  } = useForm();
- const onSubmit =  (data)  => {
-     fetch('/', {
-      method: 'POST', 
-      body: data,
-      })
+ const onSubmit =  (e)  => {
+      const data = { "form-name": "contact", ...e }
+      console.log(data)
+      fetch('/', {
+        method: 'POST', 
+        body: encode(data),
+        })
       .then(() => setStatus("Form Submission Successful!!"))
       .catch(error => test("Form Submission Failed!"));
             
