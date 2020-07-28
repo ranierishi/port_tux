@@ -80,8 +80,8 @@ export default () => {
         name="Contact Form"
         method="POST"
         netlify-honeypot="bot-field"
-        data-netlify="true"
-        action="/thanks">
+        data-netlify="true"        
+        action="/thank-you/">
       <input type="hidden" name="bot-field" />
              <div>          
               <label>
@@ -106,10 +106,10 @@ export default () => {
               <label>
                  <textarea name="message" placeholder={'Your Message'} ref={register({
                   required: true,
-                  minLength: 30
+                  minLength: 10
                   })} />
                   {errors.message && errors.message.type === "required" && (<p>This field is required</p>)}
-                  {errors.message && errors.message.type === "minLength" && (<p>Minimum of 30 characters</p>)}
+                  {errors.message && errors.message.type === "minLength" && (<p>Minimum of 10 characters</p>)}
               </label>
             </div>
             
