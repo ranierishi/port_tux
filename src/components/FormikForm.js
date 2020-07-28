@@ -51,27 +51,24 @@ export default () => {
     }
   }
   */
- function encode(data) {
-  return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
+ const encode = (data) => {
+  const formData = new FormData();
+  Object.keys(data).forEach((k)=>{
+    formData.append(k,data[k])
+  });
+  return formData
 }
 
-const { register, handleSubmit,  errors, reset  } = useForm({mode: 'onChange',});
-const [status, setStatus] = useState('');
- const handleChange = e => setStatus({ ...status, [e.target.name]: e.target.value })
- const onSubmit =  (data, e)  => {
-      e.preventDefault()
-      //console.log(data)
+ const [status,setStatus] = useState('');
+ const { register, handleSubmit, errors  } = useForm();
+ const onSubmit =  (e)  => {
+      const data = { "form-name": "contact", ...e }
+      console.log(data)
       fetch('/', {
         method: 'POST', 
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({'form-name': 'contact',
-        ...status,}),
+        body: encode(data),
         })
-      .then((response) => {setStatus("Form Submission Successful!!")
-      reset()
-      console.log(response)})
+      .then(() => setStatus("Form Submission Successful!!"))
       .catch(error => test("Form Submission Failed!"));
             
   };
@@ -88,7 +85,7 @@ const [status, setStatus] = useState('');
       <input type="hidden" name="bot-field" />
              <div>          
               <label>
-                 <input type="text" name="name"  placeholder={'Your name'} onChange={handleChange} ref={register({
+                 <input type="text" name="name"  placeholder={'Your name'} ref={register({
                   required: true,
                   minLength: 2
                 })} />
@@ -98,7 +95,7 @@ const [status, setStatus] = useState('');
              </div>
              <div> 
               <label>
-                 <input type="email" name="email" placeholder={'Enter email'} onChange={handleChange} ref={register({
+                 <input type="email" name="email" placeholder={'Enter email'} ref={register({
                   required: true,
                   pattern: /^\S+@\S+$/i,
                 })} />
@@ -107,7 +104,7 @@ const [status, setStatus] = useState('');
             </div>
             <div>
               <label>
-                 <textarea name="message" placeholder={'Your Message'} onChange={handleChange} ref={register({
+                 <textarea name="message" placeholder={'Your Message'} ref={register({
                   required: true,
                   minLength: 10
                   })} />
