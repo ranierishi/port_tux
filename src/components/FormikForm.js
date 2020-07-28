@@ -60,7 +60,7 @@ export default () => {
 }
 
  const [status,setStatus] = useState('');
- const { register, handleSubmit, errors  } = useForm();
+ const { register, handleSubmit,reset, errors  } = useForm();
  const onSubmit =  (e)  => {
       const data = { "form-name": "contact", ...e }
       console.log(data)
@@ -68,7 +68,8 @@ export default () => {
         method: 'POST', 
         body: encode(data),
         })
-      .then(() => setStatus("Form Submission Successful!!"))
+      .then(() => {setStatus("Form Submission Successful!!")
+      reset()})
       .catch(error => test("Form Submission Failed!"));
             
   };
