@@ -1,3 +1,5 @@
-Portifolio Site Study
+#Portifolio Site Study
 
-DEMO: https://arthuriung.netlify.app
+![react](https://img.shields.io/badge/react-16.13.1-blue)
+
+>Demo: https://arthuriung.netlify.app
