@@ -5,6 +5,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import img2 from '../assets/SkolHops/Skol-Hops.png'
 import img3 from '../assets/Robbyson_Land/Robbyson-Land.png'
 import img4 from '../assets/Cacada_Autentica/Cacada-Autentica.png'
+import img5 from '../assets/Mini_Mundo/Mundo-CNH-Industrial.png'
+import img6 from '../assets/Brahma_Extra/Brahma-Extra.png'
+import img7 from '../assets/Araujo_Venda/Araujo-Venda-Mais.png'
 import {Link} from 'react-router-dom'
 
 
@@ -137,6 +140,87 @@ function Projects() {
                   </CardContent>
                 </CardActionArea>
               
+              
+            </Card>
+            </Link>
+            </li>
+          </Grid>
+
+          <Grid container item xs={12} sm={4}>
+            <li onClick={scrollToTop}><Link className={classes.link} to='/Mini_mundo_cnhi'>
+              <Card className={classes.card} >
+                <CardActionArea>
+                  <CardMedia
+                    component="img"
+                    alt=""
+                    height="240"
+                    image={img5}
+                    title="Contemplative Reptile"
+                    />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      Mini Mundo CNHI 
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                      Aplicativos & Realidade Aumentada & Marketing
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              
+              
+            </Card>
+            </Link>
+            </li>
+          </Grid>
+
+          <Grid container item xs={12} sm={4}>
+            <li onClick={scrollToTop}><Link className={classes.link} to='/Fabrica_Brahma_Extra'>
+              <Card className={classes.card} >
+                <CardActionArea>
+                  <CardMedia
+                    component="img"
+                    alt=""
+                    height="240"
+                    image={img6}
+                    title="Contemplative Reptile"
+                    />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      Fábrica Brahma Extra
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                      Aplicativos & Realidade Aumentada & Marketing
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              
+              
+            </Card>
+            </Link>
+            </li>
+          </Grid>
+
+          <Grid container item xs={12} sm={4}>
+            <li onClick={scrollToTop}><Link className={classes.link} to='/Araujo_Venda_Mais'>
+              <Card className={classes.card} >
+                <CardActionArea>
+                  <CardMedia
+                    component="img"
+                    alt=""
+                    height="240"
+                    image={img7}
+                    title="Contemplative Reptile"
+                    />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                        Araujo Venda Mais
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                      Aplicativos & Realidade Aumentada & Marketing
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                
               
             </Card>
             </Link>
